@@ -1,5 +1,12 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}, {{#if user}}{{user.username}} [{{user.email}}]{{/if}}</p>
+<h1>Question Order</h1>
+{{#if user}}<p>hello, {{user.username}} [{{user.email}}]</p>
+<h2>Create a New List</h2>
+<form action="/list/{{list.listid}}" method="POST">
+    <input type="text" name="listid" placeholder="List ID"/>
+    <button type="submit">Create</button>
+</form>
+<h2>Your Lists</h2>
 {{#each lists as |list i|}}
 <a href="/list/{{list.listid}}">{{list.listid}}</a><br>
 {{/each}}
+{{/if}}

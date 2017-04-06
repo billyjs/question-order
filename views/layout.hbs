@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-      <div class="container">
-          {{#if messages.error}}
-          <div class="alert alert-danger">
-              {{messages.error}}
-          </div>
-          {{else if messages.info}}
-          <div class="alert alert-info">
-              {{messages.info}}
-          </div>
-          {{else if messages.success}}
-          <div class="alert alert-success">
-              {{messages.success}}
-          </div>
-          {{/if}}
-      </div>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<div class="flash-container">
+    {{#if messages.error}}
+        <div class="alert alert-danger">
+            {{messages.error}}
+        </div>
+    {{else if messages.info}}
+        <div class="alert alert-info">
+            {{messages.info}}
+        </div>
+    {{else if messages.success}}
+        <div class="alert alert-success">
+            {{messages.success}}
+        </div>
+    {{/if}}
+</div>
+<div class="content">
     {{{body}}}
-  </body>
+</div>
+<footer>
+    <a class="footer-btn" href="https://www.github.com/billy-7/question-order" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+    <p>By <a href="https://www.linkedin.com/in/billyschulze" target="_blank">Billy Schulze</a></p>
+</footer>
+</body>
+
 </html>

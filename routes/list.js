@@ -7,7 +7,8 @@ var List = require('../models/list');
 router.get('/:listid', function (req, res) {
     List.findOne({ listid: req.params.listid }, function(err, list) {
         if (list) {
-            res.render('listView', {
+            res.render('list', {
+                title: req.params.listid,
                 user: req.user,
                 list: list,
                 owner: (req.user && req.user.username == list.owner)
@@ -22,11 +23,6 @@ router.get('/:listid', function (req, res) {
 
 
 // authenticated endpoints
-router.get('/', ensureAuth, function(req, res) {
-    res.render('list', {
-        user: req.user
-    });
-});
 
 router.post('/', ensureAuth, function(req, res) {
     var list = new List({

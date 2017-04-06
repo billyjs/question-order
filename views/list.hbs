@@ -1,10 +1,22 @@
-<form method="POST">
-    <legend>Create new List</legend>
-    <div class="form-group">
-        <label for="listid">List ID</label>
-        <input type="text" name="listid" autofocus="autofocus" class="form-control"/>
-        <label for="owner">Owner</label>
-        <input type="text" name="owner" class="form-control" value="{{user.username}}" disabled="true"/>
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+<h1>{{list.listid}}</h1>
+{{# if owner }}
+    <form action="/list/{{list.listid}}/password" method="POST">
+        <input type="text" name="password" value="{{list.password}}" placeholder="set password"/>
+        <button type="submit" class="btn btn-primary">Set</button>
+    </form>
+    <form action="/list/{{list.listid}}/pop" method="POST">
+        <button type="submit">Remove First Name</button>
+    </form>
+    <form action="/list/{{list.listid}}/clear" method="POST">
+        <button type="submit">Clear</button>
+    </form>
+{{/if}}
+<form action="/list/{{list.listid}}" method="POST">
+    <input type="text" name="item" autofocus="autofocus" placeholder="add your name" id="add-name"/>
+    <br />
+    <input type="text" name="password" placeholder="password" id="add-password"/>
+    <button type="submit">Add</button>
 </form>
+{{#each list.items as |item i|}}
+    <p>{{item}}</p>
+{{/each}}

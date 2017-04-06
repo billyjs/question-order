@@ -1,12 +1,10 @@
+<h1>Login</h1>
 <form method="POST">
-    <legend>Login</legend>
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" name="username" autofocus="autofocus" class="form-control"/>
+    <input type="text" name="username" autofocus="autofocus" placeholder="username"/>
+    <input type="password" name="password" placeholder="password"/>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="flex">
+        <a href="/signup" class="small">Signup</a>
+        <a href="/forgot" class="small forgot">Forgot Password?</a>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control"/>
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button><a href="/forgot" class="btn btn-link">Forgot Password?</a>
 </form>
