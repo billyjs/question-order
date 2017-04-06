@@ -1,0 +1,10 @@
+<form method="POST">
+    <legend>Create new List</legend>
+    <div class="form-group">
+        <label for="listid">List ID</label>
+        <input type="text" name="listid" autofocus="autofocus" class="form-control"/>
+        <label for="owner">Owner</label>
+        <input type="text" name="owner" class="form-control" value="{{user.username}}" disabled="true"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

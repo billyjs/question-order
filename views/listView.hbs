@@ -1,0 +1,30 @@
+<h1>{{list.listid}}</h1>
+{{# if owner }}
+    <form action="/list/{{list.listid}}/password" method="POST">
+        <legend>Password</legend>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" name="password" class="form-control" value="{{list.password}}"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Set</button>
+    </form>
+    <form action="/list/{{list.listid}}/pop" method="POST">
+        <button type="submit" class="btn btn-primary">Remove First Name</button>
+    </form>
+    <form action="/list/{{list.listid}}/clear" method="POST">
+        <button type="submit" class="btn btn-primary">Clear</button>
+    </form>
+{{/if}}
+<form action="/list/{{list.listid}}" method="POST">
+    <legend>Password</legend>
+    <div class="form-group">
+        <label for="item">Add Name</label>
+        <input type="text" name="item" autofocus="autofocus" class="form-control"/>
+        <label for="item">Password</label>
+        <input type="text" name="password" class="form-control"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+{{#each list.items as |item i|}}
+    <p>{{item}}</p>
+{{/each}}

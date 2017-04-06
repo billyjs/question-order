@@ -1,0 +1,5 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}, {{#if user}}{{user.username}} [{{user.email}}]{{/if}}</p>
+{{#each lists as |list i|}}
+<a href="/list/{{list.listid}}">{{list.listid}}</a><br>
+{{/each}}

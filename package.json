@@ -1,0 +1,27 @@
+{
+  "name": "question-order",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.3.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "dotenv": "^4.0.0",
+    "express": "~4.14.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.2",
+    "hbs": "~4.0.1",
+    "mongoose": "^4.9.3",
+    "morgan": "~1.7.0",
+    "node-sass-middleware": "0.9.8",
+    "nodemailer": "^3.1.8",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.3.2"
+  }
+}
